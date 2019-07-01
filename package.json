@@ -16,7 +16,6 @@
   "keywords": [
     "citation",
     "bibtex",
-    "wikidata",
     "contentmine",
     "quickscrape",
     "csl",
@@ -28,6 +27,7 @@
     "/build/citation.min.js"
   ],
   "dependencies": {
+    "@babel/cli": "^7.4.4",
     "@citation-js/cli": "0.4.5",
     "@citation-js/core": "0.4.5",
     "@citation-js/date": "0.4.4",
@@ -37,7 +37,6 @@
     "@citation-js/plugin-csl": "0.4.5",
     "@citation-js/plugin-doi": "0.4.5",
     "@citation-js/plugin-ris": "0.4.5",
-    "@citation-js/plugin-wikidata": "0.4.5",
     "citeproc": "^2.2.9"
   },
   "devDependencies": {
@@ -73,7 +72,8 @@
     "generate": "npm run dist && npm run docs && npm run disc",
     "--3--": "hooks",
     "preversion": "npm run lint && npm run test",
-    "prepublishOnly": "npm run dist:main"
+    "prepublishOnly": "npm run dist:main",
+    "compile": "babel index.js"
   },
   "author": "Lars Willighagen (https://larsgw.github.io)",
   "license": "MIT",
